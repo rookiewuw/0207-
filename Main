@@ -1,0 +1,47 @@
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args){
+        Student a=new Student("1111","a","sj");
+        Student b=new Student("2222","b","sj");
+        ArrayList s=new ArrayList();
+        s.add(a);
+        s.add(b);
+        ArrayList l=new ArrayList();
+        ArrayList count = new ArrayList();
+        count.add(a);
+     //   System.out.println(a.toString());
+        java j=new java("java","wuli","home",s);
+        data_structure d=new data_structure("数据结构","fu","306",s);
+        System.out.println(j.toString()+j.getStudent());
+        System.out.println(d.toString()+d.getStudent());
+        ArrayList noPresent=new ArrayList();
+        for(Object str:s)
+        {
+            if(!count.contains(str))
+            {
+                noPresent.add(str);
+            }
+        }
+      //  System.out.println(noPresent);
+        try{
+            if(noPresent!=null){
+                throw new Exception();
+            }
+            else{
+                System.out.println("全勤");
+            }
+        }
+        catch (Exception e){
+            for(int i=0;i<noPresent.size();i++){
+                System.out.println(noPresent.get(i)+" 旷课");
+            }
+        }
+        Teacher m=new Teacher("3333","华农",l);
+        Teacher n=new Teacher("4444","罗翔",l);
+        /*System.out.println(m.getNumber()+" "+m.getName());
+        m.getCourses();*/
+        Counselor fdy=new Counselor("5555","y",l,s);
+      //  System.out.println(fdy.getNumber()+" "+fdy.getName()+" "+fdy.getsname());
+    }
+}
